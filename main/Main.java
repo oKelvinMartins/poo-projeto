@@ -28,13 +28,13 @@ public class Main {
 
         // Somando os valores
         for (Financiamento financiamento : listaFinanciamentos) {
-            totalValorImoveis += financiamento.getvalorImovel(); // Supondo que exista um método getValorImovel()
-            totalFinanciamento += financiamento.totalPagamento(); // Supondo que totalPagamento() retorne o valor total do financiamento
+            totalValorImoveis += financiamento.getvalorImovel(); 
+            totalFinanciamento += financiamento.totalPagamento(); 
         }
 
         // Exibindo os totais
         for (Financiamento financiamento : listaFinanciamentos) {
-        System.out.println("Valor do imóvel: " + financiamento.getvalorImovel() + "valor do financiamento: " + financiamento.totalPagamento());
+        System.out.println("financiamento: " + "Valor do imóvel: " + financiamento.getvalorImovel() + " valor do financiamento: " + financiamento.totalPagamento());
         }
 
         System.out.println("Total de valores dos imóveis: " + totalValorImoveis);

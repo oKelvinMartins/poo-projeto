@@ -14,12 +14,12 @@ public class InterfaceUsuario {
         do {
             System.out.print("Digite o valor desejado do imóvel: ");
             valorDesejadoImovel = scanner.nextLong();
-                if (valorDesejadoImovel > 0 && valorDesejadoImovel <= 1000000) {
+                if (valorDesejadoImovel > 0) {
             System.out.println("O valor escolhido para financiamento foi: R$" + valorDesejadoImovel);    
             } else {
                 System.out.println("ERRO! Valor invalido");
                 }
-        } while (valorDesejadoImovel <= 0 || valorDesejadoImovel > 1000000);
+        } while (valorDesejadoImovel <= 0);
         return valorDesejadoImovel;           
     }
 
@@ -32,10 +32,10 @@ public class InterfaceUsuario {
             prazoFinanciamentoAnos = scanner.nextInt();
                 if (prazoFinanciamentoAnos > 0 && prazoFinanciamentoAnos <= 40) {
                     System.out.println("O prazo escolhido foi: " + prazoFinanciamentoAnos 
-                    + "anos");
+                    + " anos");
             
             }else {
-                System.out.println("ERRO! Valor invalido");
+                System.out.println("ERRO! Prazo permitido até 40 anos");
             } 
         } while (prazoFinanciamentoAnos <= 0 || prazoFinanciamentoAnos > 40);     
         return prazoFinanciamentoAnos;
@@ -53,7 +53,7 @@ public class InterfaceUsuario {
                     System.out.println("A taxa de juros escolhida foi: " + taxaJurosAnual + "%");
 
             } else {
-                System.out.println("ERRO! Valor inválido");
+                System.out.println("ERRO! Taxa permitida até 20%");
             }
         } while (taxaJurosAnual <= 0 || taxaJurosAnual > 20);   
         return taxaJurosAnual; 
