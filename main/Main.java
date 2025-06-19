@@ -1,7 +1,11 @@
 package main;
 import modelo.Financiamento;
+import modelo.Apartamento;
+import modelo.Casa;
+import modelo.Terreno;
 import util.InterfaceUsuario;
 import java.util.ArrayList;
+
 
 
 
@@ -11,17 +15,29 @@ public class Main {
         ArrayList<Financiamento> listaFinanciamentos = new ArrayList<>();
         InterfaceUsuario interfaceUsuario = new InterfaceUsuario();
 
-        // Ler os dados inseridos pelo usuário
-        for (int i = 1; i <= 4; i++) {
-            System.out.println("----------- Digite os dados do financiamento " + i + ":");
-            double valorImovel = interfaceUsuario.solicitarValorImovel();
-            int prazoFinanciamentoAnos = interfaceUsuario.solicitarPrazoFinanciamento();
-            double taxaJuros = interfaceUsuario.solicitarTaxaJuros();
+        System.out.println("----------- Digite os dados do financiamento ");
+        double valorImovel = interfaceUsuario.solicitarValorImovel();
+        int prazoFinanciamentoAnos = interfaceUsuario.solicitarPrazoFinanciamento();
+        double taxaJuros = interfaceUsuario.solicitarTaxaJuros();
+        // Adicionar os financiamentos de casa na lista 
+        Casa CasaFinanciada1 = new modelo.Casa(valorImovel, prazoFinanciamentoAnos, taxaJuros);
+        listaFinanciamentos.add(CasaFinanciada1);
 
-            // Adicionando financiamento à lista
-            listaFinanciamentos.add(new modelo.Financiamento(valorImovel, prazoFinanciamentoAnos, taxaJuros));
-        }
+        Casa CasaFinanciada2 = new modelo.Casa(100000, 10, 6);
+        listaFinanciamentos.add(CasaFinanciada2);
 
+        // Adicionar os financiamentos de apartamento
+        
+        Apartamento ApartamentoFinanciado1 = new modelo.Apartamento(250000, 35, 9);
+        listaFinanciamentos.add(ApartamentoFinanciado1);
+
+        Apartamento ApartamentoFinanciado2 = new modelo.Apartamento(450000, 20, 12);
+        listaFinanciamentos.add(ApartamentoFinanciado2);
+
+        // Adicionar os financiamentos de apartamento
+        
+        Terreno TerrenoFinanciado1 = new modelo.Terreno(100000, 5, 8);
+        listaFinanciamentos.add(TerrenoFinanciado1);        
         // Variáveis para armazenar os totais
         double totalValorImoveis = 0;
         double totalFinanciamento = 0;
