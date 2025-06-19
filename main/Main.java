@@ -34,7 +34,7 @@ public class Main {
         Apartamento ApartamentoFinanciado2 = new modelo.Apartamento(450000, 20, 12);
         listaFinanciamentos.add(ApartamentoFinanciado2);
 
-        // Adicionar os financiamentos de apartamento
+        // Adicionar os financiamentos de Terreno
         
         Terreno TerrenoFinanciado1 = new modelo.Terreno(100000, 5, 8);
         listaFinanciamentos.add(TerrenoFinanciado1);        
