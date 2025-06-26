@@ -1,13 +1,11 @@
 package modelo;
 
 
-public class Financiamento {
+public abstract class Financiamento {
     // Atributos 
     protected double valorImovel;
     protected int prazoFinanciamento;
     protected double taxaJurosAnual;
-
-
         
     public void mensagem() {
         System.out.println("O valor do imóvel" + this.getvalorImovel()); 
@@ -27,12 +25,9 @@ public class Financiamento {
     public Double calculoPagamentoMensal() {
         return (this.valorImovel / (this.prazoFinanciamento * 12)) * (1 + (this.taxaJurosAnual / 12));
     }
-
     // Metodo de calculo de pagmaento mensal 
-    public Double totalPagamento () {
-        return this.calculoPagamentoMensal() * this.prazoFinanciamento * 12;
-    }
-
+    public abstract Double totalPagamento ();
+    
     public Double getvalorImovel() {
         return this.valorImovel;
     } 

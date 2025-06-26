@@ -2,9 +2,15 @@ package modelo;
 
 public class Apartamento extends Financiamento {
 
+    private int vagasGaragem;
+    private int andarApartamento;
+
+
     // Metodo construtor 
-    public Apartamento(double valorDesejadoImovel, int prazoFinanciamentoAnos, double taxaJurosAnual){
+    public Apartamento(double valorDesejadoImovel, int prazoFinanciamentoAnos, double taxaJurosAnual, int vagasGaragem, int andarApartamento){
         super(valorDesejadoImovel, prazoFinanciamentoAnos, taxaJurosAnual);
+        this.vagasGaragem = vagasGaragem;
+        this.andarApartamento = andarApartamento;
 
     } 
     
@@ -23,6 +29,18 @@ public class Apartamento extends Financiamento {
         return (valorImovel * Math.pow((1 + taxaJurosMensal), prazoFinanciamentoEmMeses)) /
                (Math.pow((1 + taxaJurosMensal), prazoFinanciamentoEmMeses) - 1);
 
+    }
+
+    public  Double totalPagamento () {
+        return calculoPagamentoMensal() * this.prazoFinanciamento * 12;
+    }
+
+    public double getVagasGaragem() {
+        return vagasGaragem;
+    }
+
+    public double getAndarApartamento() {
+        return andarApartamento;
     }
 
 }
