@@ -1,6 +1,8 @@
 package modelo;
+ 
 
-public class Apartamento extends Financiamento {
+
+public class Apartamento extends Financiamento{
 
     private int vagasGaragem;
     private int andarApartamento;
@@ -43,4 +45,14 @@ public class Apartamento extends Financiamento {
         return andarApartamento;
     }
 
+    // Juntar informações 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getvalorImovel() + "\n");
+        sb.append(totalPagamento() + "\n");
+        sb.append(this.getTaxaJurosAnual() + "\n");
+        sb.append(this.getVagasGaragem() + "\n");
+        sb.append(getAndarApartamento());
+        return sb.toString();
+    }
 }

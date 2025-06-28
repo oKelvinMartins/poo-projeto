@@ -1,6 +1,9 @@
 package modelo;
 
-public class Terreno extends Financiamento {
+
+
+
+public class Terreno extends Financiamento  {
 
     private String tipoZona; 
 
@@ -11,7 +14,7 @@ public class Terreno extends Financiamento {
     
     @Override 
     public Double calculoPagamentoMensal() {
-        return super.calculoPagamentoMensal() * 0.2;
+        return super.calculoPagamentoMensal() * 1.2;
     }
 
     public  Double totalPagamento () {
@@ -20,5 +23,14 @@ public class Terreno extends Financiamento {
 
     public String getTipoZona(){
         return tipoZona;
+    }
+    // Juntar informações 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getvalorImovel() + "\n");
+        sb.append(totalPagamento() + "\n");
+        sb.append(this.getTaxaJurosAnual() + "\n");
+        sb.append(this.getTipoZona());
+        return sb.toString();
     }
 }

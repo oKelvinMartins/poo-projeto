@@ -1,7 +1,10 @@
 package modelo;
 
+import java.io.Serializable;
 
-public abstract class Financiamento {
+public abstract class Financiamento implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
     // Atributos 
     protected double valorImovel;
     protected int prazoFinanciamento;

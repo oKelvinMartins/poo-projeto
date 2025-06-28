@@ -1,6 +1,7 @@
 package util;
 
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class InterfaceUsuario {
@@ -9,12 +10,12 @@ public class InterfaceUsuario {
     double taxaJurosAnual;
     long valorDesejadoImovel;
 
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
     // Método - Pedir valor do imóvel
 
     public double solicitarValorImovel() {
-    double valorDesejadoImovel = 0;
+    long valorDesejadoImovel = 0;
 
     do {
         try {

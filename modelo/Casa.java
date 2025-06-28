@@ -1,7 +1,8 @@
 package modelo;
 import util.AumentoMaiorDoQueJurosException;
 
-public class Casa extends Financiamento {
+
+public class Casa extends Financiamento{
 
     private double areaConstruida;
     private double tamanhoTerreno;
@@ -47,6 +48,17 @@ private void validarAcrescimentoPagamentoMensal(double valorJuros, double valorA
 
     public double getTamanhoTerreno() {
         return tamanhoTerreno;
+    }
+
+        // Juntar informações 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getvalorImovel() + "\n");
+        sb.append(totalPagamento() + "\n");
+        sb.append(this.getTaxaJurosAnual() + "\n");
+        sb.append(this.getAreaConstruida() + "\n");
+        sb.append(getTamanhoTerreno());
+        return sb.toString();
     }
 
 }
